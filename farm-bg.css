@@ -1,0 +1,105 @@
+/* Enhanced farm-themed background for auth pages */
+.farm-bg{
+  --sky-1: #e6f9ff;
+  --sky-2: #eaf7ee;
+  --sun: #ffd566;
+  --hill1: #98d678;
+  --hill2: #63b24a;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  color:#123;
+  overflow:hidden;
+
+  background-color: var(--sky-1);
+  background-image:
+    radial-gradient(circle at 82% 12%, rgba(255,213,102,0.30) 0%, rgba(255,213,102,0.0) 22%),
+    linear-gradient(180deg, rgba(230,249,255,0.9) 0%, rgba(234,247,238,0.85) 48%, rgba(247,247,239,0.98) 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'>%3Cdefs%3E%3ClinearGradient id='g1' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e6f9ff'/%3E%3Cstop offset='1' stop-color='%23f7fbf4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='600' fill='url(%23g1)'/%3E%3Cg transform='translate(0,280)'>%3Cpath d='M0,220 C200,120 350,160 600,210 C850,260 1000,180 1200,220 L1200,400 L0,400 Z' fill='%2398d678' opacity='0.98'/%3E%3Cpath d='M0,260 C250,180 400,220 650,270 C900,320 1050,240 1200,260 L1200,400 L0,400 Z' fill='%2363b24a' opacity='0.98'/%3E%3Crect x='0' y='300' width='1200' height='100' fill='%237b4f3b' opacity='0.95'/%3E%3E%3C/g%3E%3Ccircle cx='980' cy='90' r='46' fill='%23ffd566' opacity='0.95'/%3E%3C/svg%3E");
+  background-size: cover, cover, contain;
+  background-position: center center, center center, center 42%;
+  background-repeat:no-repeat;
+  background-blend-mode:normal,normal,screen;
+}
+
+/* soft vignette and floating decorative leaves */
+.farm-bg::before,
+.farm-bg::after{
+  content:'';
+  position:absolute;
+  width:420px;
+  height:420px;
+  top:6%;
+  opacity:0.08;
+  background-repeat:no-repeat;
+  background-size:contain;
+  pointer-events:none;
+  transform-origin:center;
+}
+.farm-bg::before{
+  left:-6%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>%3Cpath fill='%232f8f3f' d='M50 140c10-30 40-60 80-68 36-8 60 20 60 20s-20-48-76-36C78 64 46 86 28 120 16 144 10 164 50 140z'/%3E%3C/svg%3E");
+  animation: floatLeft 7s ease-in-out infinite;
+}
+.farm-bg::after{
+  right:-6%;
+  top:14%;
+  width:360px;
+  height:360px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>%3Cpath fill='%23385c2b' d='M150 130c-10-28-40-54-78-62-34-7-58 18-58 18s18-44 72-34c34 7 66 30 84 64 12 24 16 42-20 14z'/%3E%3C/svg%3E");
+  animation: floatRight 9s ease-in-out infinite;
+}
+
+@keyframes floatLeft{ 0%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(10px) rotate(2deg)}100%{transform:translateY(0) rotate(-3deg)} }
+@keyframes floatRight{ 0%{transform:translateY(0) rotate(3deg)}50%{transform:translateY(-8px) rotate(-2deg)}100%{transform:translateY(0) rotate(3deg)} }
+
+/* gentle sun glow pulse */
+.farm-bg .sun-glow{ position:absolute; right:16%; top:6%; width:140px; height:140px; border-radius:50%; background:radial-gradient(circle, rgba(255,213,102,0.22), rgba(255,213,102,0.06) 45%, transparent 70%); filter:blur(18px); animation: pulse 6s infinite; pointer-events:none }
+@keyframes pulse{ 0%{transform:scale(0.98)}50%{transform:scale(1.03)}100%{transform:scale(0.98)} }
+
+/* translucent card for forms so text remains readable */
+.farm-bg .auth-card{
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px) saturate(1.08);
+  border-radius:14px;
+  box-shadow: 0 16px 44px rgba(12,18,10,0.08);
+  padding:2rem;
+  max-width:520px;
+  width:94%;
+  border: 1px solid rgba(20,55,20,0.04);
+}
+
+.farm-bg::after{
+  /* subtle ground fade */
+  content:'';
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:140px;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(20,45,18,0.04));
+  pointer-events:none;
+}
+
+/* Dark theme tweak */
+.dark .farm-bg{
+  background-color:#06131a;
+  background-image:
+    radial-gradient(circle at 82% 12%, rgba(255,213,102,0.06) 0%, rgba(255,213,102,0.0) 22%),
+    linear-gradient(180deg, rgba(8,18,24,0.85) 0%, rgba(6,20,26,0.88) 48%, rgba(6,14,18,0.96) 100%);
+}
+
+/* Dark mode: dim decorations and invert card */
+.dark .farm-bg::before, .dark .farm-bg::after{ opacity:0.035; filter:brightness(0.8) saturate(0.6) }
+.dark .farm-bg .sun-glow{ opacity:0.18; filter:blur(22px) saturate(0.6) }
+.dark .farm-bg .auth-card{
+  background: rgba(6,12,18,0.72);
+  color: #e7f6ee;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 10px 30px rgba(2,6,8,0.6);
+}
+.dark .farm-bg .auth-card .brand-badge{ background:rgba(44,120,64,0.9); color:#fff }
+
+
+.farm-bg input, .farm-bg button, .farm-bg select, .farm-bg textarea{ font-size:15px }
+

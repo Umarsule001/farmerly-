@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hero — Farmerly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="hero-full d-flex align-items-center">
+      <button id="theme-toggle" class="theme-fab" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      <div class="container text-white">
+        <div class="row">
+          <div class="col-lg-7">
+            <h1 class="display-4 hero-fade">Built for farmers. Designed for growth.</h1>
+            <p class="lead text-white-75 mb-4">A modern, fast, and friendly interface to manage your farm records, apply for loans, and access resources — demoed fully in your browser.</p>
+            <div class="d-flex gap-2">
+              <a class="btn btn-light btn-lg shadow-sm" href="register.html"><i class="fa-solid fa-seedling me-2 text-success"></i> Get Started</a>
+              <a class="btn btn-outline-light btn-lg" href="farmer-dashboard.html"><i class="fa-solid fa-chart-line me-2 text-success"></i> Explore Dashboard</a>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-4 mt-lg-0">
+            <div class="mock-device p-4 position-relative">
+              <div id="lottie-hero-2" class="lottie-container mx-auto"></div>
+              <img src="https://images.unsplash.com/photo-1498575207490-0f1097b3e1c3?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6bb8b8c5e4b6b6f3c2ab1c7f0f8b5d4a" class="img-fluid rounded-3 shadow-sm" alt="preview">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card p-4">
+            <h5><i class="fa-solid fa-flask text-success me-2"></i> Data-first</h5>
+            <p class="mb-0 text-muted">Quickly capture records and access analytics.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card p-4">
+            <h5><i class="fa-solid fa-hand-holding-dollar text-success me-2"></i> Loan-ready</h5>
+            <p class="mb-0 text-muted">Apply for loans with a few clicks.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card p-4">
+            <h5><i class="fa-solid fa-bolt text-success me-2"></i> Fast & Local</h5>
+            <p class="mb-0 text-muted">No server required — runs in your browser.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-4 text-center small text-muted">© Farmerly — Hero demo</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

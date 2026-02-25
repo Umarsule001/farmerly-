@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Farmerly — Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header bg-gradient">
+      <div class="container d-flex align-items-center justify-content-between py-3">
+        <a class="brand d-flex align-items-center gap-3" href="index.html">
+          <span class="brand-badge" aria-hidden="true">
+            <!-- inline SVG logo: sprouting plant -->
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <g fill="none" fill-rule="evenodd">
+                <path d="M12 21c0-4 2-6 2-6s2-2 4-2c0 0-1-4-6-4-1.5 0-3 .5-4 1.5C6.2 13 4 15 4 17c0 2 2.7 3.5 4 4.2V21h4z" fill="#FFFFFF"/>
+                <path d="M7.5 9.2c1.2-1.6 3.6-2.6 5.5-1.6 1.1.6 1.8 1.9 2 3.1" stroke="#FFFFFF" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16.5 6.5c.8-1.3 2.6-2.2 4-1.6.3.1.6.4.7.7.2.4.1.9 0 1.4-.6 1.9-2.9 2.2-4.3 1.6" stroke="#FFFFFF" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+          </span>
+          <span class="brand-text">Farmerly</span>
+        </a>
+        <nav class="d-flex align-items-center gap-2">
+          <button id="theme-toggle" class="btn btn-sm btn-outline-light" title="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+          <a class="btn btn-sm btn-outline-light me-2" href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+          <a class="btn btn-sm btn-light" href="register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
+        </nav>
+      </div>
+
+      <div class="site-title text-center py-3">
+        <div class="container">
+          <h2 class="fw-bold mb-0">FARMERLY🌽</h2>
+          <p class="small text-light-opacity mb-0">Local-first farm management — track crops, finances, and apply for supportive loans.</p>
+        </div>
+      </div>
+
+      <div class="header-deco" aria-hidden="true">
+        <svg width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="leafGrad" x1="0" x2="1">
+              <stop offset="0" stop-color="#b7f07a"/>
+              <stop offset="1" stop-color="#2aa44f"/>
+            </linearGradient>
+          </defs>
+          <g opacity="0.16">
+            <path d="M10 90 C40 20 120 20 190 90" stroke="url(#leafGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M60 60 C80 40 100 30 130 50" stroke="#b7f07a" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="160" cy="40" r="6" fill="#b7f07a" />
+          </g>
+        </svg>
+      </div>
+    </header>
+
+    <main class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-5 mb-3">Manage your farm. Access loans. Grow with confidence.</h1>
+          <p class="lead mb-4 text-muted">Farmerly helps farmers track records, apply for loans, and access agricultural resources — all from a simple, beautiful interface that runs locally in your browser.</p>
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary btn-lg shadow-sm btn-with-icon" href="register.html">Get Started
+                <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M5 12h14M13 5l7 7-7 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a class="btn btn-outline-primary btn-lg" href="login.html">Sign In</a>
+              <a class="btn btn-light btn-lg" href="hero.html">View Hero</a>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center mt-4 mt-lg-0">
+            <div class="lottie-wrap position-relative">
+              <div id="lottie-hero" class="lottie-container mx-auto"></div>
+              <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0f1f4b7ef0d1df1f6b6d3b0e2f8f1c2a" alt="farmer" class="img-fluid rounded-3 shadow-lg hero-img fallback-img">
+            </div>
+        </div>
+      </div>
+
+      <section class="mt-5">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 feature-card">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fa-solid fa-book-open-reader text-success me-2"></i> Farm Records</h5>
+                <p class="card-text">Easily store and view crop yields and notes with the Farmer Portal.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 feature-card">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fa-solid fa-hand-holding-dollar text-success me-2"></i> Loan Applications</h5>
+                <p class="card-text">Apply for loans and track their status — demoed locally using secure browser storage.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 feature-card">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fa-solid fa-shield-halved text-success me-2"></i> Admin Tools</h5>
+                <p class="card-text">Administrators can manage applications and users in the Admin Panel (client-side demo).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-4 text-center small text-muted">© Farmerly version</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+      // small entrance animation for hero image
+      document.addEventListener('DOMContentLoaded', ()=>{
+        document.querySelectorAll('.hero-fade').forEach(el=>el.classList.add('reveal'));
+        // initialize theme toggle
+        if (window.initTheme) window.initTheme();
+      });
+    </script>
+  </body>
+</html>

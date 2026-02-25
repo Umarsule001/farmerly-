@@ -1,0 +1,203 @@
+:root{ --accent:#2f8f3f; --muted:#6c757d; --bg: #fbf2e6; --header-start:#1a7a37; --header-end:#0e5a28; --header-accent:#064e1a }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+
+/* Premium / "Expensive" theme tokens (overrides) */
+:root{
+	--lux-foreground:#0f1720;
+	--lux-muted:#6b7280;
+	--lux-bg:#fbf2e6;
+	--lux-card:#ffffff;
+	--lux-accent:#0f6b3a;
+	--lux-gold:#d4af37;
+	--lux-deep:#07121a;
+	--radius-lg:14px;
+	--card-shadow: 0 18px 55px rgba(6,12,18,0.12), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:var(--bg); color:#0f1720}
+.site-header{background:linear-gradient(90deg,var(--header-start) 0%, var(--header-end) 100%); color:#fff}
+.brand{font-weight:700; color:#fff; font-size:1.25rem; text-decoration:none}
+.hero-img{max-height:320px; object-fit:cover}
+.card{border:0; border-radius:12px}
+.bg-gradient{background:linear-gradient(135deg,rgba(31,139,79,0.95), rgba(28,117,62,0.95));}
+button:focus, a:focus{outline:3px solid rgba(30,126,52,0.18); outline-offset:2px}
+.form-card{background:#fff; padding:24px; border-radius:12px; box-shadow:0 6px 18px rgba(15,23,32,0.06)}
+.panel{background:#fff; padding:18px; border-radius:10px; box-shadow:0 4px 12px rgba(15,23,32,0.04)}
+.btn-primary{background:var(--accent); border-color:var(--accent)}
+footer{color:var(--muted);}
+.feature-card{transition:transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s; border-radius:14px}
+.feature-card:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(15,23,32,0.12)}
+.hero-fade{animation:fadeUp .9s ease both}
+@keyframes fadeUp{ from{opacity:0; transform:translateY(12px)} to{opacity:1; transform:none} }
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{ 0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)} }
+.toast{position:fixed; right:20px; bottom:20px; z-index:9999}
+
+/* Hero page styles */
+.hero-full{min-height:60vh; background:linear-gradient(120deg, #0f5132 0%, #1e7e34 50%, #0b5d2b 100%); padding:80px 0}
+.hero-full .lead{color:rgba(255,255,255,0.9)}
+.hero-full .btn-light{color:#1e7e34}
+.mock-device{background:rgba(255,255,255,0.06); border-radius:12px}
+
+.lottie-container{width:320px;height:320px}
+.lottie-wrap{max-width:420px}
+.fallback-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:12px; opacity:0.18}
+
+/* Button SVG micro-interaction */
+.btn-with-icon{display:inline-flex; align-items:center; gap:10px}
+.btn-arrow{transition:transform .22s ease, opacity .22s ease}
+.btn-with-icon:hover .btn-arrow{transform:translateX(6px); opacity:0.95}
+
+/* Reveal on scroll */
+.reveal{opacity:1; transform:none; transition:opacity .7s ease, transform .7s cubic-bezier(.2,.9,.2,1)}
+.hero-fade{opacity:0; transform:translateY(14px)}
+.feature-card{opacity:0; transform:translateY(12px)}
+.feature-card.reveal{opacity:1; transform:none}
+
+/* Counters */
+.stat { font-weight:700; font-size:1.6rem; color:var(--accent) }
+
+/* Theme variables for dark mode */
+
+:root{ --surface:#ffffff; --text:#0f1720; --muted:#6c757d; --card:#ffffff }
+.dark{ --surface:#0b1220; --text:#e6eef3; --muted:#9fb0bd; --card:#07121a; --bg:#07121a; --header-start: #062026; --header-end: #063038; --header-accent:#0f6b3a }
+body{ background:var(--bg); color:var(--text); }
+
+/* Ensure index header and title follow dark mode (overrides fixed gradients) */
+.dark .site-header.bg-gradient{ background: linear-gradient(90deg, rgba(2,19,25,0.98) 0%, rgba(6,24,28,0.98) 100%) !important; }
+.dark .site-header .site-title{ background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.04)); }
+.dark .site-header .site-title h2{ color: var(--header-accent); text-shadow: 0 8px 32px rgba(0,0,0,0.7); }
+.dark .site-header .site-title p{ color: rgba(255,255,255,0.82); }
+.dark .header-deco{ opacity:0.06 }
+
+/* Ensure paragraph and muted text are readable in dark mode */
+.dark p, .dark .lead, .dark .card-text { color: rgba(230,238,243,0.92) !important; }
+.dark .text-muted, .dark .lead.text-muted { color: rgba(179,201,190,0.88) !important; }
+.dark .text-light-opacity { color: rgba(255,255,255,0.88) !important; }
+.dark a.btn-outline-light{ color: rgba(255,255,255,0.95) !important; border-color: rgba(255,255,255,0.08) !important }
+.panel, .card, .form-card, .feature-card{ background:var(--card); color:var(--text) }
+#Header uses farm palette variables
+.site-header{ background:linear-gradient(90deg,var(--header-start) 0%, var(--header-end) 100%); }
+
+/* Header button/link color tuning */
+.site-header .brand{ color:#fff }
+.site-header .btn-outline-light{ color:rgba(255,255,255,0.95); border-color:rgba(255,255,255,0.18); background:transparent }
+.site-header .btn-light{ background:rgba(255,255,255,0.96); color:var(--header-end); border-color:transparent }
+
+.site-header .brand i{ color:var(--header-accent); margin-right:8px; text-shadow:none }
+#theme-toggle{ width:40px; height:36px; display:inline-flex; align-items:center; justify-content:center }
+
+/* Smooth theme transition */
+html { transition: background .25s ease, color .25s ease }
+
+/* Brand badge and header decoration */
+.brand-badge{ width:56px; height:56px; display:inline-flex; align-items:center; justify-content:center; background:var(--header-accent); color:#fff; border-radius:12px; box-shadow:0 10px 30px rgba(15,23,32,0.12); font-size:20px }
+.brand-badge svg{ width:22px; height:22px }
+.brand-text{ font-weight:800; color:#fff; font-size:1.35rem; letter-spacing:0.6px; margin-left:8px; display:inline-block; text-shadow:0 6px 20px rgba(6,10,6,0.45); transition:transform .18s ease, text-shadow .18s ease }
+.site-header .brand:hover .brand-text{ transform:translateY(-2px); text-shadow:0 10px 30px rgba(6,10,6,0.55) }
+.site-header{ position:sticky; top:0; z-index:1100; backdrop-filter: blur(6px); }
+.site-header .container{ gap:10px }
+.site-header .btn-outline-light{ border-radius:8px }
+.header-deco{ position:absolute; right:18px; bottom:-10px; pointer-events:none }
+.site-header .site-title{ padding-top:0.6rem }
+
+/* Floating theme button for pages without header */
+.theme-fab{ position:fixed; right:18px; top:18px; z-index:1200; width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.06); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.04) }
+.dark .theme-fab{ background:rgba(0,0,0,0.28); border-color:rgba(255,255,255,0.06) }
+.theme-fab:focus{ outline:3px solid rgba(30,126,52,0.18); }
+
+
+@media (max-width:767px){ .hero-img{max-height:220px} }
+
+/* Large centered site title inside header */
+.site-header .site-title{
+	background:linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.02));
+	padding:0.9rem 0 0.6rem 0;
+}
+.site-header .site-title h2{
+	color:var(--header-accent);
+	font-size:2.4rem;
+	letter-spacing:1.8px;
+	text-transform:uppercase;
+	text-shadow:0 6px 26px rgba(13,25,10,0.28);
+	margin-bottom:6px;
+	line-height:1;
+}
+.site-header .site-title p{
+	color:rgba(255,255,255,0.95);
+	margin-top:4px;
+	font-weight:500;
+	opacity:0.98;
+}
+.text-light-opacity{ color: rgba(255,255,255,0.92) }
+
+@media (max-width:767px){ .site-header .site-title h2{ font-size:1.4rem } }
+
+/* Modern utilities */
+.modern-card{ border-radius:12px; box-shadow:0 10px 30px rgba(13,20,10,0.06); }
+.modern-panel{ border-radius:12px; box-shadow:0 10px 30px rgba(13,20,10,0.04); padding:18px; background:var(--card) }
+.auth-card{ background: rgba(255,255,255,0.92); padding:20px; border-radius:12px; box-shadow:0 14px 40px rgba(12,18,10,0.06); max-width:520px; margin:0 auto }
+.auth-card.text-center{ text-align:center }
+.auth-card .brand-badge{ width:56px; height:56px }
+.modern-panel h6, .modern-panel h5{ margin-top:0 }
+
+/* responsive tweaks */
+@media (max-width:576px){ .brand-text{ display:inline-block; font-size:1.05rem } .site-header .site-title{ padding-top:0.4rem } }
+
+/* Premium visual overrides */
+.site-header{ padding:18px 0; background: linear-gradient(90deg, rgba(8,30,17,0.95), rgba(10,50,30,0.95)); color:#fff }
+.site-header .brand{ font-family: 'Playfair Display', Inter, serif; font-size:1.35rem }
+.bg-gradient{background:linear-gradient(120deg, rgba(15,107,58,0.95), rgba(18,83,52,0.94));}
+.card{ border-radius: var(--radius-lg); box-shadow: var(--card-shadow) }
+.form-card{ padding:28px; border-radius:var(--radius-lg); background:var(--lux-card) }
+.btn-primary{ background: linear-gradient(180deg, var(--lux-accent), #0c5a33); border-color: rgba(0,0,0,0.06); color: #fff; box-shadow: 0 8px 22px rgba(15,23,32,0.12); border-radius:10px; padding:12px 20px }
+.btn-outline-secondary{ border-radius:10px }
+.modern-panel{ border-radius:var(--radius-lg); box-shadow:0 20px 60px rgba(10,16,10,0.08); padding:20px; background:var(--card) }
+.auth-card{ border-radius:var(--radius-lg); padding:28px; box-shadow: 0 26px 70px rgba(10,20,12,0.12); border:1px solid rgba(10,20,12,0.03) }
+.auth-card h3{ font-family:'Playfair Display', Inter, serif; font-weight:600 }
+.auth-card .brand-badge{ box-shadow: 0 10px 30px rgba(15,23,32,0.12); width:64px; height:64px; font-size:20px }
+.form-control{ border-radius:10px; padding:14px 12px; border:1px solid rgba(15,23,32,0.06); box-shadow: inset 0 1px 0 rgba(255,255,255,0.02) }
+.form-control:focus{ outline:none; box-shadow:0 6px 28px rgba(15,23,32,0.08); border-color: rgba(15,111,58,0.9) }
+.btn{ transition: transform .16s ease, box-shadow .16s ease }
+.btn:active{ transform:translateY(1px) }
+
+/* Lux typography */
+h1,h2,h3,h4,h5{ font-family: 'Playfair Display', Inter, serif; letter-spacing:0.4px }
+.brand-text{ font-family: 'Playfair Display', Inter, serif }
+
+/* subtle metallic accent for highlights */
+.muted-gold{ color:var(--lux-gold) }
+
+/* Navigation visual improvements for index header */
+.site-header nav{ display:flex; gap:10px; align-items:center }
+.site-header nav .btn{ border-radius:12px; padding:10px 14px; font-weight:600; box-shadow:0 8px 24px rgba(8,18,12,0.14) }
+.site-header nav .btn-outline-light{ color:rgba(255,255,255,0.96); background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.18); transition: all .18s ease; padding:9px 12px }
+.site-header nav .btn-outline-light:hover{ background:rgba(255,255,255,0.09); transform:translateY(-2px); box-shadow:0 18px 44px rgba(8,18,12,0.14) }
+.site-header nav .btn-light{ background: linear-gradient(180deg, #ffffff, #f3fff0); color:var(--lux-deep); border:none; padding:9px 12px }
+.site-header nav .btn-light:hover{ transform:translateY(-2px); box-shadow:0 14px 36px rgba(8,18,12,0.14) }
+.site-header .brand-badge{ width:56px; height:56px; border-radius:12px }
+
+/* ensure the theme toggle icon is visible */
+#theme-toggle, .site-header #theme-toggle{ color: rgba(255,255,255,0.96); background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); box-shadow:0 10px 26px rgba(8,18,12,0.12) }
+#theme-toggle i{ color:inherit }
+
+/* Light-mode specific: ensure header buttons are readable on lighter headers/backgrounds */
+html:not(.dark) .site-header nav .btn-outline-light{
+	color: var(--lux-deep);
+	background: rgba(255,255,255,0.92);
+	border-color: rgba(10,15,10,0.06);
+}
+html:not(.dark) .site-header nav .btn-outline-light:hover{
+	background: rgba(255,255,255,0.98);
+	box-shadow: 0 12px 32px rgba(10,15,10,0.08);
+	transform: translateY(-2px);
+}
+html:not(.dark) .site-header #theme-toggle{
+	color: var(--lux-deep);
+	background: rgba(255,255,255,0.94);
+	border-color: rgba(10,15,10,0.06);
+}
+
+/* mobile nav spacing */
+@media (max-width:767px){ .site-header nav .btn{ padding:8px 10px; font-size:0.92rem } }
+

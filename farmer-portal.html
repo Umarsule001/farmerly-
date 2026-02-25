@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Farmer Portal — Farmerly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">Farmer Portal</h4>
+        <div>
+          <button class="btn btn-outline-light me-2" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+          <button id="theme-toggle" class="theme-fab" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="auth-card mb-4">
+            <form onsubmit="handleAddRecord(event)">
+              <div class="mb-3"><textarea name="data" class="form-control" rows="3" placeholder="New record (crop, yield, notes)" required></textarea></div>
+              <div class="d-grid"><button class="btn btn-success">Add Record</button></div>
+            </form>
+          </div>
+          <div class="panel modern-panel">
+            <h6>Your Records</h6>
+            <ul class="list-group" id="portal-list"></ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel modern-panel">
+            <h6>Personal Analytics</h6>
+            <p>Total records: <span id="portal-count">0</span></p>
+            <a class="btn btn-outline-primary" href="farmer-dashboard.html">Back to dashboard</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+    <script>renderPortal();</script>
+  </body>
+</html>
